@@ -1,0 +1,8 @@
+{
+  "name": "APP_trabajos_blank",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

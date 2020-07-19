@@ -1,0 +1,18 @@
+#container {
+  text-align: center;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+ion-content{
+  --background: translucent; // este me permite que el background no tape los item que estan dentro de el
+  --background: var(--ion-color-dark);
+}
+
+ion-img{
+  width: 64px !important;
+  height: 64px !important;
+}

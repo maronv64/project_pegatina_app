@@ -1,0 +1,8 @@
+{
+  "appId": "io.ionic.starter",
+  "appName": "APP_trabajos_blank",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "cordova": {}
+}
