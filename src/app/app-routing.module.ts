@@ -16,7 +16,17 @@ const routes: Routes = [
     path: 'perfil',
     loadChildren: () => import('./pages/perfil/perfil.module').then( m => m.PerfilPageModule)
   },
+  {
+    path: 'login',
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'register',
+    loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
+  },
   { path: '**'  , redirectTo: 'inicio' },
+
+
   // {
   //   path: 'categories',
   //   loadChildren: () => import('./pages/categories/categories.module').then( m => m.CategoriesPageModule)

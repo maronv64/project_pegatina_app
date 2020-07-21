@@ -1,0 +1,40 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar color="pega-primary" >
+    <!-- <ion-title>register</ion-title> -->
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="login"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="pega-primary">
+  <div class="container">
+    <form [formGroup]="formRegister" (ngSubmit)="onSubmit()">
+      <img src="../../../assets/svg/person-add.svg" alt="">
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">Usuario <ion-text color="danger">*</ion-text></ion-label>
+            <ion-input required formControlName="_name" type="text"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">E-Mail <ion-text color="danger">*</ion-text></ion-label>
+            <ion-input required formControlName="_email" type="email"></ion-input>
+          </ion-item>
+          <ion-item class="password">
+            <ion-label position="floating">Password <ion-text color="danger">*</ion-text></ion-label>
+            <ion-input required formControlName="_password" [type]="isPassword ? 'password' : 'text'"></ion-input>
+            <!-- <ion-label slot="end"><ion-icon slot="icon-only" name="eye"></ion-icon></ion-label> -->
+            <ion-button slot="end" (click)="showPassword()">
+              <ion-icon slot="icon-only" name="eye"></ion-icon>
+            </ion-button>
+          </ion-item>
+          <ion-button block color="primary" type="submit" [disabled]="formRegister.invalid" >
+            Crear Cuenta
+          </ion-button>
+        </ion-col>
+      </ion-row>
+     
+    </form>
+  </div>
+</ion-content>

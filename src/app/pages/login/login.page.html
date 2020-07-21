@@ -1,0 +1,23 @@
+<!-- <ion-header  [translucent]="true" class="ion-no-border">
+  <ion-toolbar color="pega-primary">
+    <ion-title>login</ion-title>
+</ion-header> -->
+
+<ion-content color="pega-primary">
+  <div class="container">
+    <form [formGroup]="formLogin" (ngSubmit)="onSubmit()">
+      <img src="../../../assets/svg/person.svg" alt="">
+      <ion-item>
+        <ion-label position="floating">E-Mail <ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required formControlName="_email" type="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Password <ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required formControlName="_password" type="password"></ion-input>
+      </ion-item>
+      <ion-button (click)="login()" shape="round" expand="block" color="primary" type="submit" [disabled]="formLogin.invalid">
+        Ingresar
+      </ion-button>
+    </form>
+  </div>
+</ion-content>

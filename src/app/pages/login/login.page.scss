@@ -1,0 +1,30 @@
+
+
+ion-item{
+    --ion-background-color: transparent !important;
+    --ion-border-color: transparent !important;
+    --color: var(--ion-color-dark);
+    ion-label{
+        color: silver;
+    }
+}
+
+ .item-has-focus{
+    --highlight-background: #e2e2e2;
+    ion-label{
+        color: var(--ion-color-light)
+    }
+ }
+
+ ion-button{
+    margin-top: 1rem !important;
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;  
+    // padding-left: 1rem !important;
+    // padding-right: 1rem !important;   
+ }
+
+ img{
+    width: 80px;
+    height: 80px;
+ }

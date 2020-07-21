@@ -4,18 +4,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { PerfilPageRoutingModule } from './perfil-routing.module';
+import { RegisterPageRoutingModule } from './register-routing.module';
 
-import { PerfilPage } from './perfil.page';
+import { RegisterPage } from './register.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule,
     IonicModule,
-    PerfilPageRoutingModule,
+    RegisterPageRoutingModule
+    ,ReactiveFormsModule
   ],
-  declarations: [PerfilPage]
+  declarations: [RegisterPage]
 })
-export class PerfilPageModule {}
+export class RegisterPageModule {}

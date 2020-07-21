@@ -15,7 +15,7 @@ export class InicioPage implements OnInit {
 
   ngOnInit() {
     setTimeout(() => {
-      this.router.navigateByUrl('/tabs/home');
+      this.router.navigateByUrl('/login');
     }, 2000);
   }
 
