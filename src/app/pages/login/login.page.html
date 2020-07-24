@@ -7,13 +7,14 @@
   <div class="container">
     <form [formGroup]="formLogin" (ngSubmit)="onSubmit()">
       <img src="../../../assets/svg/person.svg" alt="">
+      <br>
       <ion-item>
-        <ion-label position="floating">E-Mail <ion-text color="danger">*</ion-text></ion-label>
-        <ion-input required formControlName="_email" type="email"></ion-input>
+        <!-- <ion-label position="floating">E-Mail <ion-text color="danger">*</ion-text></ion-label> -->
+        <ion-input placeholder="correo" required formControlName="_email" type="email"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label position="floating">Password <ion-text color="danger">*</ion-text></ion-label>
-        <ion-input required formControlName="_password" type="password"></ion-input>
+        <!-- <ion-label position="floating">Password <ion-text color="danger">*</ion-text></ion-label> -->
+        <ion-input placeholder="clave" required formControlName="_password" type="password"></ion-input>
       </ion-item>
       <ion-button shape="round" expand="block" color="primary" type="submit" [disabled]="formLogin.invalid">
         Ingresar

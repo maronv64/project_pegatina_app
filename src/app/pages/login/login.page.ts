@@ -24,7 +24,7 @@ export class LoginPage implements OnInit {
     this.formLogin = new FormGroup({
       _nome_token : new FormControl({value : '',disabled:false}),
       _name : new FormControl({value : '',disabled:false}),
-      _email : new FormControl({value: '',disabled:false}, [Validators.required,Validators.email]),
+      _email : new FormControl({value: 'admin@admin.com',disabled:false}, [Validators.required,Validators.email]),
       _password : new FormControl({value: '',disabled:false}, [Validators.required])
     });
   }
@@ -36,7 +36,7 @@ export class LoginPage implements OnInit {
   }
 
   onSubmit(){
-    this._messagebox.presentToastWithButtons();
+    this._messagebox.presentToastWithButtons({color:'dark'});
     console.log('login');
     // console.log(
     //   'nome_token:', this.formLogin.get('_nome_token').value,

@@ -1,18 +1,25 @@
 
 
 ion-item{
-    --ion-background-color: transparent !important;
-    --ion-border-color: transparent !important;
+    border-radius: 2rem !important;
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+    margin-bottom: 1rem !important;
+    // --ion-background-color: white !important;
+    // --ion-boder-color: blue !important;
+    // --ion-background-color: transparent !important;
+    // --ion-border-color: transparent !important;
+    text-align: center !important;
     --color: var(--ion-color-dark);
     ion-label{
-        color: silver;
+        color: var(--ion-color-pega-primary);
     }
 }
 
  .item-has-focus{
     --highlight-background: #e2e2e2;
     ion-label{
-        color: var(--ion-color-light)
+        color: var(--ion-color-pega-primary)
     }
  }
 
@@ -28,3 +35,4 @@ ion-item{
     width: 80px;
     height: 80px;
  }
+
