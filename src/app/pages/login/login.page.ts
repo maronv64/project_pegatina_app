@@ -36,93 +36,59 @@ export class LoginPage implements OnInit {
   }
 
   onSubmit(){
-    this._messagebox.presentToastWithButtons({color:'dark'});
+    
     console.log('login');
-    // console.log(
-    //   'nome_token:', this.formLogin.get('_nome_token').value,
-    //   'correo:'    , this.formLogin.get('_email').value
-    // );
-
     this._userService._validar_correo({
 
       nome_token  : this.formLogin.get('_nome_token').value,
       correo      : this.formLogin.get('_email').value
 
-    }).then(data=>{
+    }).then(data_validar_correo=>{
       console.log('service');
-      console.log('-> data:',data['code']);
+      console.log('-> data:',data_validar_correo['code']);
 
       console.log( '_correo:', this.formLogin.get('_email').value);
       
-      if (data['code']=="500") { // el correo es incorrecto
-        console.log('code 500',data);
-        //this.formLogin.get('_email').setErrors({'incorrect':true}); //setear el valor con incorrecto
+      if (data_validar_correo['code']=="500") { // el correo es incorrecto
+        
+        console.log('code 500',data_validar_correo);
+        let _message = data_validar_correo['message'] + ' . ' + data_validar_correo['message_exception'];
+        this._messagebox.presentToastWithButtons({message:_message});
+
       }
 
-      if (data['code']=="200") {
+      if (data_validar_correo['code']=="200") {
         //this.presentToastWithButtons();
         console.log('_email:', this.formLogin.get('_email').value);
+        
         this._userService._login({
+
           correo: this.formLogin.get('_email').value,
           clave:  this.formLogin.get('_password').value
-        }).then(data1=>{
-          if (data1['code']=='500') {
-            console.log('log de la clave:',data1);
+
+        }).then(data_login=>{
+          if (data_login['code']=='500') {
             
-            // this.formLogin.get('_password').setErrors({'incorrect':true}); //setear el valor con incorrecto
-          } else if(data1['code']=='200') {
+            console.log('log de la clave:',data_login);
+            let _message = data_login['message'] + ' . ' + data_login['message_exception'];
+            this._messagebox.presentToastWithButtons({message:_message});
+
+          } else if(data_login['code']=='200') {
             this.router.navigateByUrl('/tabs/home');
           }
-        }).catch(error1=>{
-          console.log(error1);
+        }).catch(error_login=>{
+          console.log(error_login);
+          this._messagebox.presentToastWithButtons();
         }).finally(()=>{
           console.log('finaly');
         });
     
       }
 
-    }).catch(error=>{}).finally(()=>{});
+    }).catch(error_validar_correo=>{
+      this._messagebox.presentToastWithButtons();
+    }).finally(()=>{});
 
-  }
-
-  async presentToast() {
-    const toast = await this.toastController.create({
-      message: 'Your settings have been saved.',
-      duration: 2000
-    });
-    toast.present();
-  }
-
-  async presentToastWithButtons() {
-    const toast = await this.toastController.create({
-      animated: true,
-      buttons: [
-        {
-          side: 'start',
-          icon: 'star',
-          text: 'Favorite',
-          handler: () => {
-            console.log('Favorite clicked');
-          }
-        }, {
-          text: 'Done',
-          role: 'cancel',
-          handler: () => {
-            console.log('Cancel clicked');
-          }
-        }
-      ],
-      color: 'primary',
-      cssClass: 'toast-success',
-      duration: 2000,
-      header: 'Toast header',
-      keyboardClose: true,
-      message: 'Click to Close',
-      mode: 'ios',
-      position: 'bottom',
-      translucent: true
-    });
-    toast.present();
   }
 
 }
