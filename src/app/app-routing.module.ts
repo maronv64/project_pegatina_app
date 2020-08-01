@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'inicio', pathMatch: 'full' },
+  { path: '', redirectTo: 'objeto', pathMatch: 'full' },
   // { path: 'home'  , loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)},
   { path: 'inicio', loadChildren: () => import('./pages/inicio/inicio.module').then( m => m.InicioPageModule)},
   // { path: 'jobs'  , loadChildren: () => import('./pages/jobs/jobs.module').then( m => m.JobsPageModule)},
@@ -24,7 +24,16 @@ const routes: Routes = [
     path: 'register',
     loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
   },
-  { path: '**'  , redirectTo: 'inicio' },
+  // {
+  //   path: 'objetos',
+  //   loadChildren: () => import('./pages/objetos/objetos.module').then( m => m.ObjetosPageModule)
+  // },
+  // { path: '**'  , redirectTo: 'inicio' },
+  {
+    path: 'objeto',
+    loadChildren: () => import('./pages/objeto/objeto.module').then( m => m.ObjetoPageModule)
+  },
+ 
 
 
   // {

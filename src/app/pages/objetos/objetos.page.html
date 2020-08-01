@@ -1,0 +1,65 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar>
+    <!-- <ion-searchbar slot="start" color="light"  placeholder="Filter Pizza" inputmode="text" type="text" (ionChange)="onSearchChange($event)" [debounce]="250" showCancelButton="never" ></ion-searchbar> -->
+    <ion-buttons slot="start">
+      <ion-button disabled (click)="onClick()">
+        <ion-label color="light">findMe</ion-label>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button (click)="onClick()">
+        <ion-icon color="light" slot="start" name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="verMenu($event)">
+        <ion-icon color="light" slot="icon-only" name="ellipsis-vertical-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>    
+  </ion-toolbar>
+
+  
+</ion-header>
+
+<ion-content [fullscreen]="true" color="pega-primary">
+  <!-- <br> -->
+  <ion-row class="ion-no-margin ion-no-padding">
+
+    <ion-col class="ion-no-margin ion-no-padding" size="6">
+      <ion-card button>
+       
+        <ion-card-content class="container">
+          <!-- Awesome content -->
+          <div class="add-button">
+            <img src="../../../assets/svg/add-circle.svg" alt="">
+            <!-- <ion-icon slot="primary" name="add"></ion-icon> -->
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+
+    <ion-col class="ion-no-margin ion-no-padding" size="6" *ngFor="let item of [1,2,3,4,5,6,7,8]; let i=index">
+      <ion-card button (click)="verObjeto(item)">
+        <ion-card-header>
+          <div class="centrar">
+            <!-- <img [src]="image" alt=""> -->
+            <img width="20px" src="../../../assets/svg/bus-outline.svg" alt="">
+          </div>
+          <ion-card-subtitle class="centrar">Awesome Subtitle</ion-card-subtitle>
+          <ion-card-title class="centrar">Objeto {{i+1}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content class="centrar">
+          Awesome content
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+  <!-- <ion-fab vertical="center" horizontal="end" edge slot="fixed">
+    <ion-fab-button color="dark" >
+      <ion-icon name="settings"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="end">
+      <ion-fab-button><ion-icon name="logo-vimeo"></ion-icon></ion-fab-button>
+    </ion-fab-list>
+  </ion-fab> -->
+</ion-content>

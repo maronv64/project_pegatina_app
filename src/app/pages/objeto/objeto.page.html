@@ -4,24 +4,20 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/tabs/home"></ion-back-button>
     </ion-buttons>
-    <ion-title>{{formPerfil.get('nombre').value}}</ion-title>
+    <ion-title>{{formObjeto.get('_nombre').value}}</ion-title>
     <ion-buttons slot="end">
-      <ion-button >
-        <ion-icon slot="icon-only" name="person"></ion-icon>
+      <ion-button (click)="verMenu($event)">
+        <ion-icon color="light" slot="icon-only" name="ellipsis-vertical-outline"></ion-icon>
       </ion-button>
-    </ion-buttons>
+    </ion-buttons> 
 
   </ion-toolbar>
 </ion-header>
 
 <ion-content color="pega-primary" >
-  <!-- <ion-row>
-    <ion-col size="4"></ion-col>
-    <ion-col size="4"><img [src]="image"></ion-col>
-    <ion-col size="4"></ion-col>
-  </ion-row> -->
-  <div class="container-perfil">
-    <form [formGroup]="formPerfil" (ngSubmit)="onSubmit()">
+
+  <div class="container" style="height: 100%;"> 
+    <form [formGroup]="formObjeto" (ngSubmit)="onSubmit()">
       <ion-card>
         <ion-card-header>
           <ion-card-subtitle>Vicente Vera</ion-card-subtitle>
@@ -31,7 +27,7 @@
           <div>
             <img [src]="image">
           </div>
-          <div> Vicente Vera </div>
+          <div> Codigo QR </div>
 
           <ion-list>
             <ion-item>

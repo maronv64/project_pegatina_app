@@ -1,6 +1,6 @@
 {
   "appId": "io.ionic.starter",
-  "appName": "APP_trabajos_blank",
+  "appName": "findMe",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",

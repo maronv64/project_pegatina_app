@@ -14,16 +14,22 @@ const routes: Routes = [
           {path:'',loadChildren:()=>import('../pages/home/home.module').then(m => m.HomePageModule)}
         ]
       },
-      {
-        path:'jobs',
-        children:[
-          {path:'',loadChildren:()=>import('../pages/jobs/jobs.module').then(m => m.JobsPageModule)}
-        ]
-      },
+      // {
+      //   path:'jobs',
+      //   children:[
+      //     {path:'',loadChildren:()=>import('../pages/jobs/jobs.module').then(m => m.JobsPageModule)}
+      //   ]
+      // },
       {
         path:'settings',
         children:[
           {path:'',loadChildren:()=>import('../pages/settings/settings.module').then(m => m.SettingsPageModule)}
+        ]
+      },
+      {
+        path: 'objetos',
+        children:[
+          {path:'', loadChildren: () => import('../pages/objetos/objetos.module').then( m => m.ObjetosPageModule)}
         ]
       },
       {

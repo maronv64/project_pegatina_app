@@ -9,3 +9,9 @@ export interface User{
     clave2?:    string,
     estado_del?:string,
 }
+
+export interface PopoverListItem{
+    name?: string,
+    url?: string,
+    icon?: string,
+}
